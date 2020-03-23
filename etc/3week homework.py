@@ -15,8 +15,8 @@ musics = soup.select('table.list-wrap> tbody > tr')
 rank = 1
 for music in musics:
     # movie 안에 a 가 있으면,
-    singer = music.select_one(' td.info>a.albumtitle.ellipsis')
+    singer = music.select_one(' td.info> a.title.ellipsis')
     singer_name = singer.text
     star = music.select_one(' a.artist.ellipsis').text
-    print(rank,"/",singer_name,"/",star)
+    print(rank,"/",singer_name.strip(),"/",star)
     rank += 1
